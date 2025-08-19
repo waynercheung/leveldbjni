@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (C) 2011 the original author or authors.
  * See the notice.md file distributed with this work for additional
  * information regarding copyright ownership.
@@ -17,8 +17,8 @@
  */
 package org.iq80.leveldb;
 
-public class Options {
-
+public class Options
+{
     private boolean createIfMissing = true;
     private boolean errorIfExists;
     private int writeBufferSize = 4 << 20;
@@ -33,10 +33,13 @@ public class Options {
     private DBComparator comparator;
     private Logger logger = null;
     private long cacheSize;
+    private int maxBatchSize = 80000;
+    private int maxManifestSize = 0; //M
 
-    static void checkArgNotNull(Object value, String name) {
-        if(value==null) {
-            throw new IllegalArgumentException("The "+name+" argument cannot be null");
+    static void checkArgNotNull(Object value, String name)
+    {
+        if (value == null) {
+            throw new IllegalArgumentException("The " + name + " argument cannot be null");
         }
     }
 
@@ -129,40 +132,76 @@ public class Options {
         return this;
     }
 
-
-    public long cacheSize() {
+    public long cacheSize()
+    {
         return cacheSize;
     }
 
-    public Options cacheSize(long cacheSize) {
+    public Options cacheSize(long cacheSize)
+    {
         this.cacheSize = cacheSize;
         return this;
     }
 
-    public DBComparator comparator() {
+    public DBComparator comparator()
+    {
         return comparator;
     }
 
-    public Options comparator(DBComparator comparator) {
+    public Options comparator(DBComparator comparator)
+    {
         this.comparator = comparator;
         return this;
     }
 
-    public Logger logger() {
+    public Logger logger()
+    {
         return logger;
     }
 
-    public Options logger(Logger logger) {
+    public Options logger(Logger logger)
+    {
         this.logger = logger;
         return this;
     }
 
-    public boolean paranoidChecks() {
+    public boolean paranoidChecks()
+    {
         return paranoidChecks;
     }
 
-    public Options paranoidChecks(boolean paranoidChecks) {
+    public Options paranoidChecks(boolean paranoidChecks)
+    {
         this.paranoidChecks = paranoidChecks;
+        return this;
+    }
+
+    public int maxBatchSize()
+    {
+        return maxBatchSize;
+    }
+
+    public Options maxBatchSize(int maxBatchSize)
+    {
+        if (maxBatchSize < 0) {
+            maxBatchSize = Integer.MAX_VALUE;
+        }
+        this.maxBatchSize = maxBatchSize;
+        return this;
+    }
+
+    public int maxManifestSize()
+    {
+        return maxManifestSize;
+    }
+
+    public Options maxManifestSize(int maxManifestSize)
+    {
+        if (maxManifestSize < 0) {
+            maxManifestSize = -1;
+            maxBatchSize(-1);
+        }
+        this.maxManifestSize = maxManifestSize;
         return this;
     }
 }

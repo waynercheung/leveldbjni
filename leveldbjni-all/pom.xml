@@ -140,7 +140,7 @@
           <optional>true</optional>
         </dependency>
         <dependency>
-          <groupId>org.iq80.leveldb</groupId>
+          <groupId>org.fusesource.leveldbjni</groupId>
           <artifactId>leveldb-api</artifactId>
           <version>${leveldb-api-version}</version>
           <classifier>sources</classifier>

@@ -51,11 +51,12 @@
     <forge-project-id>leveldbjni</forge-project-id>
     <forge-project-id-uc>LEVELDBJNI</forge-project-id-uc>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <hawtjni-version>1.9</hawtjni-version>
-    <leveldb-api-version>0.6</leveldb-api-version>
+    <hawtjni-version>1.11</hawtjni-version>
+    <leveldb-api-version>1.8</leveldb-api-version>
   </properties>
   
   <modules>
+    <module>leveldb-api</module>
     <module>leveldbjni</module>
   </modules>
   

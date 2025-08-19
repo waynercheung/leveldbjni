@@ -41,7 +41,7 @@
 
   <groupId>org.fusesource.leveldbjni</groupId>
   <artifactId>leveldbjni-project</artifactId>
-  <version>1.8</version>
+  <version>1.18.2</version>
   <packaging>pom</packaging>
   
   <name>${project.artifactId}</name>
@@ -52,7 +52,7 @@
     <forge-project-id-uc>LEVELDBJNI</forge-project-id-uc>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <hawtjni-version>1.11</hawtjni-version>
-    <leveldb-api-version>1.8</leveldb-api-version>
+    <leveldb-api-version>1.18.2</leveldb-api-version>
   </properties>
   
   <modules>

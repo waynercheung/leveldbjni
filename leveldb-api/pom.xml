@@ -5,12 +5,12 @@
     <parent>
         <groupId>org.fusesource.leveldbjni</groupId>
         <artifactId>leveldbjni-project</artifactId>
-        <version>1.8</version>
+        <version>1.18.2</version>
     </parent>
 
     <groupId>org.fusesource.leveldbjni</groupId>
     <artifactId>leveldb-api</artifactId>
-    <version>${leveldb-api-version}</version>
+<!--    <version>${leveldb-api-version}</version>-->
     <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
